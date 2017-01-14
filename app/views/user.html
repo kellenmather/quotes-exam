@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h3>Posts by {{alias}}</h3>
+        <a href="/quotes">Dashboard</a>
+        <a href="/user/logout">Logout</a>
+      </div>
+      {{count}}
+      <div id="bottom-wrap">
+        {% for x in quotes %}
+        <p>{{x['qb']}}: {{x['quote']}}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

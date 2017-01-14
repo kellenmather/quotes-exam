@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h3>Welcome, {{session['user']['alias']}}!</h3>
+        <a href="/user/logout">Logout</a>
+      </div>
+      <div id="bottom-wrap">
+        <div class="content scrollbar">
+          <h3>Quotable Quotes</h3>
+          {% for q in qlist %}
+          <p>{{q['author']}}: {{q['quote']}}</p>
+          <p>Posted by: <a href="/user/{{q['poster']}}">{{q['alias']}}</a></p>
+          <form action="/quotes/fav" method="post">
+            <input type="hidden" name="uid" value="{{session['user']['id']}}">
+            <input type="hidden" name="qid" value="{{q['qid']}}">
+            <input type="submit" value="Add to Favorites">
+          </form>
+          {% endfor %}
+        </div>
+        <div class="content">
+          <div class="updown scrollbar">
+            <h3>Your Favorites</h3>
+            {% for f in flist %}
+            <p>{{f['qb']}}: {{f['quote']}}</p>
+            <p>Posted by: <a href="/user/{{f['origin']}}">{{f['alias']}}</a></p>
+            <form action="/quotes/remove" method="post">
+              <input type="hidden" name="fid" value="{{f['fid']}}">
+              <input type="submit" value="Remove from Favorites">
+            </form>
+            {% endfor %}
+          </div>
+          <div class="updown">
+            <h3>Contribute a Quote:</h3>
+            <form action="/quotes/new" method="post">
+              <label>Quoted By: <input type="text" name="qb"></label>
+              <label>Quote: <textarea name="quote"></textarea></label>
+              <input type="hidden" name="uid" value="{{session['user']['id']}}">
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+  </body>
+</html>

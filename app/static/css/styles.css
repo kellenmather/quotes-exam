@@ -1,0 +1,55 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ outline: 0px;
+ border: 0px;
+}
+#wrapper {
+  width: 1100px;
+  margin: 0 auto;
+}
+#header {
+  width: 1080px;
+  height: 20px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: lightblue;
+}
+#bottom-wrap {
+}
+.content {
+  width: 480px;
+  height: 580px;
+  background-color: lightgrey;
+  display: inline-block;
+  border: solid black 1px;
+  margin-left: 30px;
+  padding: 10px;
+  vertical-align: top;
+}
+label {
+  display: block;
+  margin: 5px 0;
+}
+.updown {
+  display: inline-block;
+  width: 450px;
+  padding: 10px;
+  background-color: white;
+  border: solid black 1px;
+  height: 250px;
+  margin-bottom: 10px;
+}
+input, textarea {
+  padding: 3px 5px;
+  border: solid black 1px;
+  border-radius: 5px;
+  resize: none;
+}
+textarea {
+  width: 300px;
+  height: 100px;
+}
+.scrollbar {
+  overflow-y: scroll;
+}
