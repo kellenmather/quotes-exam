@@ -1,3 +1,11 @@
+# Quotes Exam
+This was a timed test which required the following:
+  1. Login/registration with validation
+  2. User creation of quotes with validation
+  3. The ability to favorite / un-favorite quotes
+  4. A bank of quotes which populates all quotes minus the ones already favorited
+  5. A page for each user that lists all quotes created by them as well as a number count of created quotes
+
 # Pylot MVC (beta)
 Pylot MVC is a lightweight MVC framework built in Python leveraging flask.
 
