@@ -6,6 +6,8 @@ This was a timed test which required the following:
   4. A bank of quotes which populates all quotes minus the ones already favorited
   5. A page for each user that lists all quotes created by them as well as a number count of created quotes
 
+This was created using Pylot framework to see more about it you can read below:
+
 # Pylot MVC (beta)
 Pylot MVC is a lightweight MVC framework built in Python leveraging flask.
 
